@@ -1,11 +1,11 @@
-package com.dxc.service;
+package com.dxc.dxcapp.service;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.dxc.entity.Movie;
-import com.dxc.dao.MovieDao;
+import com.dxc.dxcapp.entity.Movie;
+import com.dxc.dxcapp.dao.MovieDao;
 @Service
 public class MovieService {
 	@Autowired
@@ -35,4 +35,6 @@ public class MovieService {
 		this.movieDao.deleteAll();
 	}
 }
+
+
 

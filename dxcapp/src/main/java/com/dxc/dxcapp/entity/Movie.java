@@ -1,4 +1,5 @@
-package com.dxc.entity;
+
+package com.dxc.dxcapp.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,7 +23,10 @@ public class Movie {
 	private String type;
 	@Column(name="duration",precision=10, scale=2,nullable=true,length = 5)
 	private Float duration;
-	public Movie(Integer id, String name, String rating, String category, String type, Float duration) {
+	@Column(name = "recommended", nullable = true, length = 20)
+	private String recommended;
+	
+	public Movie(Integer id, String name, String rating, String category, String type, Float duration,String recommended) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -30,6 +34,13 @@ public class Movie {
 		this.category = category;
 		this.type = type;
 		this.duration = duration;
+		this.recommended=recommended;
+	}
+	public String getRecommended() {
+		return recommended;
+	}
+	public void setRecommended(String recommended) {
+		this.recommended = recommended;
 	}
 	public Movie() {
 		super();
@@ -73,8 +84,10 @@ public class Movie {
 	@Override
 	public String toString() {
 		return "Movie [id=" + id + ", name=" + name + ", rating=" + rating + ", category=" + category + ", type=" + type
-				+ ", duration=" + duration + "]";
+				+ ", duration=" + duration + ", recommended=" + recommended + "]";
 	}
+	
 	
 
 }
+
