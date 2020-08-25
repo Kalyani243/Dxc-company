@@ -13,73 +13,99 @@ public class SavingsUser {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	@Column(name = "username", nullable = true, length = 255)
-	private String username;
+	@Column(name = "name", nullable = true, length = 255)
+	private String name;
+	@Column(name = "dob", nullable = true, length = 255)
+	private String dob;
+
+	@Column(name = "phoneno", nullable = true, length = 255)
+	private Long phoneno;
+	
 	@Column(name = "aadharno", nullable = true, length = 255)
 	private Integer aadharno;
-	@Column(name = "customerid", nullable = true, length = 255)
-	private Long customerid;
-	@Column(name = "enteramount", nullable = true, length = 255)
-	private Long enteramount;
-	public SavingsUser(Integer id, String username, Integer aadharno, Long customerid, Long enteramount) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.aadharno = aadharno;
-		this.customerid = customerid;
-		this.enteramount = enteramount;
-	}
 	
+	@Column(name = "pancard", nullable = true, length = 255)
+	private Integer pancard;
+	
+	@Column(name = "address", nullable = true, length = 255)
+	private String address;
+
 	public Integer getId() {
 		return id;
 	}
-	
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
-	public String getUsername() {
-		return username;
+
+	public String getName() {
+		return name;
 	}
-	
-	public void setUsername(String username) {
-		this.username = username;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	
+
+	public String getDob() {
+		return dob;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
+	public Long getPhoneno() {
+		return phoneno;
+	}
+
+	public void setPhoneno(Long phoneno) {
+		this.phoneno = phoneno;
+	}
+
 	public Integer getAadharno() {
 		return aadharno;
 	}
-	
+
 	public void setAadharno(Integer aadharno) {
 		this.aadharno = aadharno;
 	}
-	
-	public Long getCustomerid() {
-		return customerid;
+
+	public Integer getPancard() {
+		return pancard;
 	}
-	
-	public void setCustomerid(Long customerid) {
-		this.customerid = customerid;
+
+	public void setPancard(Integer pancard) {
+		this.pancard = pancard;
 	}
-	
-	public Long getEnteramount() {
-		return enteramount;
+
+	public String getAddress() {
+		return address;
 	}
-	
-	public void setEnteramount(Long enteramount) {
-		this.enteramount = enteramount;
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
+
+	public SavingsUser(Integer id, String name, String dob, Long phoneno, Integer aadharno, Integer pancard,
+			String address) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.dob = dob;
+		this.phoneno = phoneno;
+		this.aadharno = aadharno;
+		this.pancard = pancard;
+		this.address = address;
+	}
+
 	public SavingsUser() {
 		super();
 	}
-	
+
 	@Override
 	public String toString() {
-		return "SavingsUser [id=" + id + ", username=" + username + ", aadharno=" + aadharno + ", customerid="
-				+ customerid + ", enteramount=" + enteramount + "]";
+		return "SavingsUser [id=" + id + ", name=" + name + ", dob=" + dob + ", phoneno=" + phoneno + ", aadharno="
+				+ aadharno + ", pancard=" + pancard + ", address=" + address + "]";
 	}
-	
-	
-
-
+  
 }

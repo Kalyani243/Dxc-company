@@ -16,228 +16,25 @@ public class User
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	@Column(name = "username", nullable = true, length = 255)
-	private String username;
-
-	@Column(name = "phone", nullable = true, length = 255)
-	private Integer phone;
-	
-	@Column(name = "password", nullable = true, length = 255)
-	private String password;
-
-	@Column(name = "email", nullable = true, length = 255)
-	private String email;
-	
-	@Column(name = "dob", nullable = true, length = 5)
+	@Column(name = "name", nullable = true, length = 255)
+	private String name;
+	@Column(name = "dob", nullable = true, length = 255)
 	private String dob;
+
+	@Column(name = "phoneno", nullable = true, length = 255)
+	private Long phoneno;
 	
 	@Column(name = "aadharno", nullable = true, length = 255)
 	private Integer aadharno;
 	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", phone=" + phone + ", password=" + password + ", email="
-				+ email + ", dob=" + dob + ", aadharno=" + aadharno + ", customerid=" + customerid + "]";
-	}
-
-	public User() {
-		super();
-	}
-
-	public User(Integer id, String username, Integer phone, String password, String email, String dob, Integer aadharno,
-			Long customerid) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.phone = phone;
-		this.password = password;
-		this.email = email;
-		this.dob = dob;
-		this.aadharno = aadharno;
-		this.customerid = customerid;
-	}
-
+	@Column(name = "pancard", nullable = true, length = 255)
+	private Integer pancard;
 	
-	/*public User(int i, String string) {
-		// TODO Auto-generated constructor stub
-	}*/
-
-
-	@Column(name = "customerid", nullable = true, length = 255)
-	private Long customerid;
-
-	
-	public Integer getId() {
-		return id;
-	}
-
-	
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	
-	public String getUsername() {
-		return username;
-	}
-
-	
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	
-	public Integer getPhone() {
-		return phone;
-	}
-
-	
-	public void setPhone(Integer phone) {
-		this.phone = phone;
-	}
-
-	
-	public String getPassword() {
-		return password;
-	}
-
-	
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	
-	public String getEmail() {
-		return email;
-	}
-
-	
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	
-	public String getDob() {
-		return dob;
-	}
-
-	
-	public void setDob(String dob) {
-		this.dob = dob;
-	}
-
-	
-	public Integer getAadharno() {
-		return aadharno;
-	}
-
-	
-	public void setAadharno(Integer aadharno) {
-		this.aadharno = aadharno;
-	}
-
-	
-	public Long getCustomerid() {
-		return customerid;
-	}
-
-	
-	public void setCustomerid(Long customerid) {
-		this.customerid = customerid;
-	}
-}
-
-	
-	
-
-
-
-
-
-
-
-
-
-/*package com.dxc.integratedbank.entity;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "bankinfo")
-public class User 
-{
-	
-	@Column(name = "id")
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
-
-	@Column(name = "username", nullable = true, length = 255)
-	private String name;
-
-	@Column(name = "phone", nullable = true, length = 255)
-	private Integer phone;
-	
-	@Column(name = "password", nullable = true, length = 255)
-	private String password;
-
-	@Column(name = "email", nullable = true, length = 255)
-	private String email;
-	
-	@Column(name = "DOB", nullable = true, length = 5)
-	private Double dob;
-	
-	@Column(name = "AadharNo", nullable = true, length = 255)
-	private Integer aadharno;
-	@Column(name = "Customerid", nullable = true, length = 255)
-	private long customerid;
-
-	public User() {
-		
-	}
-	
-	public long getCustomerid() {
-		return customerid;
-	}
-
-	public void setCustomerid(long customerid) {
-		this.customerid = customerid;
-	}
-
-	public User(Integer id, String name, Integer phone, String password, String email, Double dob, Integer aadharno) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.phone = phone;
-		this.password = password;
-		this.email = email;
-		this.dob = dob;
-		this.aadharno = aadharno;
-	}
+	@Column(name = "address", nullable = true, length = 255)
+	private String address;
 
 	public Integer getId() {
 		return id;
-	}
-
-	public User(Integer id, String name, Integer phone, String password, String email, Double dob, Integer aadharno,
-			long customerid) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.phone = phone;
-		this.password = password;
-		this.email = email;
-		this.dob = dob;
-		this.aadharno = aadharno;
-		this.customerid = customerid;
 	}
 
 	public void setId(Integer id) {
@@ -252,36 +49,20 @@ public class User
 		this.name = name;
 	}
 
-	public Integer getPhone() {
-		return phone;
-	}
-
-	public void setPhone(Integer phone) {
-		this.phone = phone;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public Double getDob() {
+	public String getDob() {
 		return dob;
 	}
 
-	public void setDob(Double dob) {
+	public void setDob(String dob) {
 		this.dob = dob;
+	}
+
+	public Long getPhoneno() {
+		return phoneno;
+	}
+
+	public void setPhoneno(Long phoneno) {
+		this.phoneno = phoneno;
 	}
 
 	public Integer getAadharno() {
@@ -292,21 +73,55 @@ public class User
 		this.aadharno = aadharno;
 	}
 
-	
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", phone=" + phone + ", password=" + password + ", email=" + email
-				+ ", dob=" + dob + ", aadharno=" + aadharno + ", customerid=" + customerid + "]";
+	public Integer getPancard() {
+		return pancard;
+	}
+
+	public void setPancard(Integer pancard) {
+		this.pancard = pancard;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public User(Integer id, String name, String dob, Long phoneno, Integer aadharno, Integer pancard, String address) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.dob = dob;
+		this.phoneno = phoneno;
+		this.aadharno = aadharno;
+		this.pancard = pancard;
+		this.address = address;
+	}
+
+	public User() {
+		super();
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", phone=" + phone + ", password=" + password + ", email=" + email
-				+ ", dob=" + dob + ", aadharno=" + aadharno + "]";
+		return "User [id=" + id + ", name=" + name + ", dob=" + dob + ", phoneno=" + phoneno + ", aadharno=" + aadharno
+				+ ", pancard=" + pancard + ", address=" + address + "]";
 	}
-	
-	
-	
-	
+}
 
-}*/
+	
+	/*@Column(name = "password", nullable = true, length = 255)
+	private String password;
+	@Column(name = "customerid", nullable = true, length = 255)
+	private Long customerid;
+	public Integer getId() {
+		return id;
+	}*/
+	
+	
+	
+	
+	
+	
