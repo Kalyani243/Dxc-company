@@ -29,7 +29,7 @@ public class FixedController  {
 	{
 		return fixedService.addFixedUser(fixeduser);
 	}
-	@GetMapping("/fixedname")
+	@GetMapping("/fixedname/{name}")
 	public FixedUser fetchByName(String name )
 	{
 		return fixedService.fetchByName(name).get();

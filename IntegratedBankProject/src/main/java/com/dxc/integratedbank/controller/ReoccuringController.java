@@ -1,4 +1,5 @@
-/*import java.io.IOException;
+package com.dxc.integratedbank.controller;
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,13 +21,16 @@ import com.dxc.integratedbank.service.ReoccuringService;
 @RequestMapping("/reoccuringuser")
 public class ReoccuringController  {
 	@Autowired
+	ReoccuringService reoccuringService;
+
+	
 	// http://localhost:28080/fixeduser/addFixedUser
 		@RequestMapping(value = "/addReoccuringUser", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 		public ReoccuringUser addReoccuringUser (@RequestBody ReoccuringUser reoccuringuser) {
-			return this.reoccuringservice.addReoccuringUser(reoccringuser);
+			return this.reoccuringService.addReoccuringUser(reoccuringuser);
 		}
 	
-}*/
+}
 
 
 	
